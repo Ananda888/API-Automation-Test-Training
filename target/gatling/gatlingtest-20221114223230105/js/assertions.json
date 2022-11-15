@@ -1,0 +1,10 @@
+{
+  "simulation": "GatlingTest",
+  "simulationId": "gatlingtest-20221114223230105",
+  "start": 1668465170550,
+  "description": "",
+  "scenarios": ["View Single User", "View Multiple Users", "Delete User", "Update User Details", "Create User", "Member Registrations", "Login"],
+  "assertions": [
+
+  ]
+}
