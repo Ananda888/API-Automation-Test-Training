@@ -1,9 +1,12 @@
+package PerformanceLoadTests
 
-import com.intuit.karate.gatling.PreDef._
-import io.gatling.core.Predef._
-import scala.concurrent.duration._
+
 import com.intuit.karate.gatling.KarateProtocol
+import com.intuit.karate.gatling.PreDef.*
+import io.gatling.core.Predef.*
 import io.gatling.core.structure.ScenarioBuilder
+
+import scala.concurrent.duration.*
 
 class KarateGatlingTest extends Simulation {
   val protocol = karateProtocol(
@@ -24,13 +27,13 @@ class KarateGatlingTest extends Simulation {
 
   //Define scenarios
   //Member Registration
-  val post_registration = scenario("Successful Member Registration").repeat(1){exec(karateFeature("src/test/karate/POST_Register.feature")).pause(30, 33)}
-  val post_login = scenario("Successful Login").repeat(1){exec(karateFeature("src/test/karate/POST_Login.feature")).pause(30,33)}
-  val post_createUser = scenario("Successfully create user").repeat(1){exec(karateFeature("src/test/karate/POST_CreateUser.feature")).pause(22, 27)}
-  val put_updateUser = scenario("Successfully update user details").repeat(1){exec(karateFeature("src/test/karate/PUT_UpdateUser.feature")).pause(22,27)}
-  val delete_User = scenario("Successfully delete user").repeat(1){exec(karateFeature("src/test/karate/DELETE_User.feature")).pause(22,27)}
-  val get_viewMultipleUsers = scenario("View multiple user details").repeat(1){exec(karateFeature("src/test/karate/GET_MultipleUsers.feature")).pause(52,65)}
-  val get_viewSingleUser = scenario("View single user details").repeat(1){exec(karateFeature("src/test/karate/GET_User.feature")).pause(28,37)}
+  val post_registration = scenario("Successful Member Registration").repeat(1){exec(karateFeature("src/test/karate/features/POST_Register.feature")).pause(30, 33)}
+  val post_login = scenario("Successful Login").repeat(1){exec(karateFeature("src/test/karate/features/POST_Login.feature")).pause(30,33)}
+  val post_createUser = scenario("Successfully create user").repeat(1){exec(karateFeature("src/test/karate/features/POST_CreateUser.feature")).pause(22, 27)}
+  val put_updateUser = scenario("Successfully update user details").repeat(1){exec(karateFeature("src/test/features/karate/PUT_UpdateUser.feature")).pause(22,27)}
+  val delete_User = scenario("Successfully delete user").repeat(1){exec(karateFeature("src/test/karate/features/DELETE_User.feature")).pause(22,27)}
+  val get_viewMultipleUsers = scenario("View multiple user details").repeat(1){exec(karateFeature("src/features/test/karate/GET_MultipleUsers.feature")).pause(52,65)}
+  val get_viewSingleUser = scenario("View single user details").repeat(1){exec(karateFeature("src/test/features/karate/GET_User.feature")).pause(28,37)}
   //Shakeout
 
 //  setUp(

@@ -1,3 +1,5 @@
+package PerformanceLoadTests
+
 
 import com.intuit.karate.gatling.KarateProtocol
 import com.intuit.karate.gatling.PreDef.*
@@ -5,6 +7,7 @@ import io.gatling.core.Predef.*
 import io.gatling.core.structure.ScenarioBuilder
 import io.gatling.http.Predef.*
 import io.gatling.http.protocol.HttpProtocolBuilder
+import scenarios.*
 
 import scala.concurrent.duration.*
 

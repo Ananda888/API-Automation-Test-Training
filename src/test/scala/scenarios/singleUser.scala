@@ -1,9 +1,11 @@
+package scenarios
+
 
 import com.intuit.karate.gatling.KarateProtocol
-import com.intuit.karate.gatling.PreDef._
-import io.gatling.core.Predef._
+import com.intuit.karate.gatling.PreDef.*
+import io.gatling.core.Predef.*
 import io.gatling.core.structure.ScenarioBuilder
-import io.gatling.http.Predef._
+import io.gatling.http.Predef.*
 import io.gatling.http.protocol.HttpProtocolBuilder
 
 object singleUser

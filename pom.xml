@@ -153,7 +153,7 @@
                 <version>4.2.7</version>
                 <configuration>
                     <simulationsFolder>src/test/scala</simulationsFolder>
-                    <simulationClass>GatlingTest</simulationClass>
+                    <simulationClass>PerformanceLoadTests.GatlingTest</simulationClass>
                     <jvmArgs>
                         <jvmArg>-Xss100m</jvmArg>
                     </jvmArgs>
