@@ -1,9 +1,9 @@
 Feature: As an interested user, I would like to successfully register for an account
   Background:
     Given url baseUrl
-    And path 'api/register'
+    When path 'api/register'
 
-  Scenario: Given I am an interested user, when I enter my username and password, then I should be able to successfully register - 200 response
+  Scenario: Successful registration with username and password - 200 response
     * def memberDetailsPayload =
     """
     {
@@ -11,7 +11,7 @@ Feature: As an interested user, I would like to successfully register for an acc
     "password": "pistol"
 }
     """
-    And request memberDetailsPayload
+    Given request memberDetailsPayload
     When method POST
     Then status 200
     And match response ==
@@ -23,7 +23,7 @@ Feature: As an interested user, I would like to successfully register for an acc
     """
 
 
-  Scenario: Given I am an interested user, when I enter my username only, then I cannot register due to not providing a password - 400 response
+  Scenario: Failed registration, no password supplied - 400 response
 
     * def memberDetailsPayload =
     """
@@ -32,10 +32,10 @@ Feature: As an interested user, I would like to successfully register for an acc
 
 }
     """
-    And request memberDetailsPayload
-
+    Given request memberDetailsPayload
     When method POST
     Then status 400
+
     And match response ==
     """
 {

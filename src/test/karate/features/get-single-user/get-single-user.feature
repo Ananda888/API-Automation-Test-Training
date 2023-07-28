@@ -4,9 +4,9 @@ Feature: As a system administrator, I want to be able to view the details of a p
 
 
     @ValidResponse
-    Scenario: Given I am a system administrator, when I enter a valid user id, then I can view the details that person - 200 response
+    Scenario: Valid user ID - 200 response
 
-      And path 'api/users/4'
+      Given path 'api/users/4'
       When method GET
       Then status 200
 
@@ -16,10 +16,10 @@ Feature: As a system administrator, I want to be able to view the details of a p
       """
          {
     "data": {
-        "id": #number,
-        "email": #string,
-        "first_name": #string,
-        "last_name": #string,
+        "id": #(response.data.id),
+        "email": #(response.data.email),
+        "first_name": #(response.data.first_name),
+        "last_name": #(response.data.last_name),
         "avatar": "https://reqres.in/img/faces/4-image.jpg"
     },
 
@@ -30,8 +30,8 @@ Feature: As a system administrator, I want to be able to view the details of a p
 }
 }
       """
-      Scenario: Given I am a system administrator, when I enter an invalid user id, then the api returns a not found error - 404 response
-        And path 'api/users/1413413414'
+      Scenario: Invalid user ID - 404 response
+        Given path 'api/users/1413413414'
         When method GET
         Then status 404
         And match response ==

@@ -7,7 +7,7 @@ Feature: As a user, I would like to login to the system
     And path 'api/login'
 
 
-  Scenario: Given that I am a user, when I enter my username and password, then I can successfully login - 200 response
+  Scenario: Successful login - 200 response
     * def memberDetailsPayload =
     """
       {
@@ -15,7 +15,7 @@ Feature: As a user, I would like to login to the system
     "password": "cityslicka"
 }
     """
-    And request memberDetailsPayload
+    Given request memberDetailsPayload
     When method POST
     Then status 200
     * def token = response.token

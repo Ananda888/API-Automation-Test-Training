@@ -1,11 +1,11 @@
 Feature: As a system administrator, I would like to see the details of all users
   Background:
-    * def page = read('../../../data/pages.csv')
+    #* def page = read('../../../data/pages.csv')
 
     Given url baseUrl
-    And path 'api/users'
+    When path 'api/users'
 
-  Scenario Outline: Given that I am a system administrator, when I enter in a page number, then I should be able to see all the users existing on that page - 200 response
+  Scenario Outline: All user details visible - 200 response
 
       * def query =
       """
@@ -14,9 +14,9 @@ Feature: As a system administrator, I would like to see the details of all users
     }
       """
 
-      And params query
-      When method GET
-      Then status 200
+    Given params query
+    When method GET
+    Then status 200
 
 
       And match response ==
@@ -78,4 +78,9 @@ Feature: As a system administrator, I would like to see the details of all users
     """
 
       Examples:
-      | page |
+      | read('../../../data/pages.csv') |
+
+#        Examples:
+#        | page |
+#        |  1   |
+#        |  2   |
