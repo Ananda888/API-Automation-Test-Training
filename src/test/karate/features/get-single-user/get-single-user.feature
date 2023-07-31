@@ -1,7 +1,7 @@
 Feature: As a system administrator, I want to be able to view the details of a person
+  #Script together with trainees to introduce them to basic Karate api test scripting and get requests
   Background:
     Given url baseUrl
-
 
     @ValidResponse
     Scenario: Valid user ID - 200 response
