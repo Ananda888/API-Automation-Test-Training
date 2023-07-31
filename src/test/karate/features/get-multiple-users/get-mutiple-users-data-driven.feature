@@ -1,5 +1,6 @@
 Feature: As a system administrator, I would like to see the details of all users
   Background:
+    #Script together with trainees to get them familiar with data-driven scenarios.
     #* def page = read('../../../data/pages.csv')
 
     Given url baseUrl

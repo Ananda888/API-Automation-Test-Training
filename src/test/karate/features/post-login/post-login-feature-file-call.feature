@@ -1,4 +1,7 @@
 Feature: As a user, I would like to login to the system
+
+
+  #If time permits, will show trainees how to call a separate feature file
   Background:
 
     * def getUserFile = call read('../get-single-user/get-single-user.feature@ValidResponse')

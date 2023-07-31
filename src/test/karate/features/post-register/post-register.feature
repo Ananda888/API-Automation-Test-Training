@@ -1,4 +1,6 @@
 Feature: As an interested user, I would like to successfully register for an account
+  #Script together with trainees to get them familiar with post request
+
   Background:
     Given url baseUrl
     When path 'api/register'

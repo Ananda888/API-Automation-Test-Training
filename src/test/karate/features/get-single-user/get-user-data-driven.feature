@@ -1,6 +1,6 @@
 Feature: As a system administrator, I want to be able to view the details of a person
   Background:
-
+    #Trainees to script on their own
     Given url baseUrl
 
     Scenario Outline: Valid user ID - 200 response
