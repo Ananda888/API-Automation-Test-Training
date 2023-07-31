@@ -5,7 +5,7 @@ function fn() {
     karate.log('Environment is: ', env);
   var config = {
     env: env,
-    myVarName: 'env',
+    myVarName: 'someValue',
     baseUrl: 'https://reqres.in/'
 
   };
