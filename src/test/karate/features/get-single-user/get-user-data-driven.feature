@@ -1,6 +1,6 @@
 Feature: As a system administrator, I want to be able to view the details of a person (data driven)
   Background:
-
+    #Trainees to script on their own
     Given url baseUrl
 
     #When using multiple test data, Scenario Outline is used as technically, the scenario is slightly different as the data input changes

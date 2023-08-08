@@ -1,4 +1,6 @@
-Feature: As a user, I would like to login to the system
+Feature: As a user, I would like to login to the system\
+
+  #Trainees will script this on their own
   Background:
     Given url baseUrl
 

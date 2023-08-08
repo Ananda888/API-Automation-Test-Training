@@ -1,4 +1,7 @@
 Feature: As a user, I would like to login to the system
+
+
+  #If time permits, will show trainees how to call a separate feature file
   Background:
     #The call read function tells karate to call and ALSO execute the feature file being called.
     * def getUserFile = call read('../get-single-user/get-single-user.feature@ValidResponse')
