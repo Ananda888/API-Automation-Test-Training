@@ -1,11 +1,14 @@
-Feature: As a system administrator, I want to be able to view the details of a person
+Feature: As a system administrator, I want to be able to view the details of a person (data driven)
   Background:
 
     Given url baseUrl
 
+    #When using multiple test data, Scenario Outline is used as technically, the scenario is slightly different as the data input changes
     Scenario Outline: Valid user ID - 200 response
 
+
       Given path 'api/users/<id>'
+      #< > Tells karate that the parameter will have data fed through
       When method GET
       Then status 200
 
@@ -25,9 +28,18 @@ Feature: As a system administrator, I want to be able to view the details of a p
     }
 }
       """
+      #The examples section is used to list the data to be used in the test. Here, we are calling the data from a csv file
       Examples:
       | read('../../../data/user-ids.csv') |
 
-
+      #When the data set is small, it as acceptable to hard code the data:
+#      Examples:
+#      | id |
+#      | 1  |
+#      | 2  |
+#      | 3  |
+#      | 4  |
+#      | 5  |
+#      | 6  |
 
 

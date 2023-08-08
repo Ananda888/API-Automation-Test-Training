@@ -1,7 +1,8 @@
 Feature: As a user, I would like to login to the system
   Background:
-
+    #The call read function tells karate to call and ALSO execute the feature file being called.
     * def getUserFile = call read('../get-single-user/get-single-user.feature@ValidResponse')
+    #Extract email from the get-single-user feature file - email was defined as a variable
     * def email = getUserFile.email
     Given url baseUrl
     And path 'api/login'

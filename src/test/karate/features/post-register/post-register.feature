@@ -1,9 +1,10 @@
 Feature: As an interested user, I would like to successfully register for an account
   Background:
     Given url baseUrl
-    When path 'api/register'
 
   Scenario: Successful registration with username and password - 200 response
+
+    #Since this is a post request, the api requires a user input. We define the payload here
     * def memberDetailsPayload =
     """
     {
@@ -11,9 +12,13 @@ Feature: As an interested user, I would like to successfully register for an acc
     "password": "pistol"
 }
     """
-    Given request memberDetailsPayload
+    Given path 'api/register'
+        #Set the request payload by using "And request"
+    And request memberDetailsPayload
     When method POST
     Then status 200
+
+    #Id and token are randomly generated. Id takes on any number and Id takes on any string
     And match response ==
     """
 {
@@ -32,7 +37,8 @@ Feature: As an interested user, I would like to successfully register for an acc
 
 }
     """
-    Given request memberDetailsPayload
+    Given path 'api/register'
+    And request memberDetailsPayload
     When method POST
     Then status 400
 

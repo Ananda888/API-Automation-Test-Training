@@ -2,8 +2,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.PerfLabGatling</groupId>
-    <artifactId>PerfLabGatling</artifactId>
+    <groupId>com.api-automation</groupId>
+    <artifactId>api-automation</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -14,7 +14,6 @@
         <karate.version>0.9.6</karate.version>
         <karate-core.version>1.3.1</karate-core.version>
         <karate-junit5.version>1.3.1</karate-junit5.version>
-        <karate-gatling.version>1.3.1</karate-gatling.version>
         <cucumber.reporting.version>5.3.0</cucumber.reporting.version>
         <junit5.version>5.9.2</junit5.version>
     </properties>
@@ -62,18 +61,9 @@
             <version>${karate-junit5.version}</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>io.gatling.highcharts</groupId>
-            <artifactId>gatling-charts-highcharts</artifactId>
-            <version>3.9.1</version>
-            <scope>test</scope>
-        </dependency>
 
-        <dependency>
-            <groupId>com.intuit.karate</groupId>
-            <artifactId>karate-gatling</artifactId>
-            <version>${karate-gatling.version}</version>
-        </dependency>
+
+
         <!--    Cucumber Reporting  -->
         <!-- https://mvnrepository.com/artifact/net.masterthought/maven-cucumber-reporting -->
         <dependency>
